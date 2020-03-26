@@ -1,0 +1,94 @@
+<div class="col-md-12">
+  <%= form_with(model: project, local: true) do |form| %>
+    <div class="row">
+      <div class="col-md-8">
+        <% if project.errors.any? %>
+          <div class="alert alert-danger" role="alert">
+            <h5><%= pluralize(project.errors.count, "error") %> prohibió que este proyecto se guardara:</h5>
+
+            <ul>
+            <% project.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-10">
+        <%= form.label 'Nombre*' %>
+        <%= form.text_field :name, class: 'form-control', placeholder: 'Nombre' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-10">
+        <%= form.label 'Descripción' %>
+        <%= form.text_field :description, class: 'form-control', placeholder: 'Descripción' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-10">
+        <%= form.label 'Status Actual*' %>
+        <select class="form-control" name="project[currentStatus]">
+          <option value="">-- Seleccione una opción --</option>
+          <option value="EN ESPERA">EN ESPERA</option>
+          <option value="INICIADO">INICIADO</option>
+          <option value="TERMINADO">TERMINADO</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-10">
+        <%= form.label 'Fecha de finalización*' %>
+        <%= form.text_field :finishDate, class: 'form-control datepicker'%>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <br>
+      <div class="col-lg-10">
+        <input type="checkbox" name="active" checked data-toggle="toggle" data-on="Sí" data-off="No" data-onstyle="success" data-offstyle="danger">
+        <%= form.label '¿Está activo?*', class: 'custom-control-label', for: 'customSwitch1' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-10">
+        <%= form.label 'Categoría' %>
+        <%= form.select :category_id, Category.all.map{|c| [c.name, c.id]}, {}, class: "form-control" %>
+
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-md-right">
+      <div class="col-lg-8">
+        <%= link_to 'Cancelar', projects_path, class: 'btn btn-danger' %>
+        <%= form.submit :Guardar, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<script>
+  $('.datepicker').datetimepicker({
+     i18n:{
+      es:{
+       months:[
+        'Enero','Febrero','Marzo','Abril',
+        'Mayo','Junio','Julio','Agosto',
+        'Septiembre','Octubre','Noviembre','Diciembre',
+       ],
+       dayOfWeek:[
+        "Do", "Lu", "Ma", "Mi",
+        "Ju", "Vi", "Sa.",
+       ]
+      }
+     },
+     timepicker:false,
+     format:'Y-m-d'
+    });
+</script>

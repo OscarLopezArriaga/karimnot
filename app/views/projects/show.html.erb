@@ -1,0 +1,71 @@
+<br>
+<% if notice != nil %>
+  <div id="alert" class="alert alert-success">
+    <p id="notice"><%= notice %></p>
+  </div>
+<% end %>
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-header">
+      Ver Proyecto
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-1">
+          <%= link_to 'Editar', edit_project_path(@project), class: 'btn btn-info' %>
+        </div>
+        <div class="col-lg-1">
+          <%= link_to 'Regresar', projects_path, class: 'btn btn-danger' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <strong>Nombre:</strong>
+        </div>
+        <div class="col-lg-8">
+          <%= @project.name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <strong>Descripción</strong>
+        </div>
+        <div class="col-lg-3">
+          <%= @project.description %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <strong>Status Actual</strong>
+        </div>
+        <div class="col-lg-8">
+          <%= @project.currentStatus %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <strong>Fecha de Finalización</strong>
+        </div>
+        <div class="col-lg-8">
+          <%= @project.finishDate %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <strong>Status Activo</strong>
+        </div>
+        <div class="col-lg-8">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <strong>Categoría</strong>
+        </div>
+        <div class="col-lg-8">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

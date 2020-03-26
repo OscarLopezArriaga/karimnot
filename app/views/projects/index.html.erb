@@ -1,0 +1,58 @@
+<br>
+<% if notice != nil %>
+  <div id="alert" class="alert alert-success">
+    <p id="notice"><%= notice %></p>
+  </div>
+<% end %>
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-header">
+      Proyectos
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <%= link_to 'Nuevo Proyecto', new_project_path, class: 'btn btn-info' %>
+      </div><br>
+      <div class="row">
+        <div class="col-lg-12">
+          <table id="projects-datatable" data-source="<%= projects_path(format: :json) %>" class="table table-bordered">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Status Actual</th>
+                <th>Fecha de termino</th>
+                <th>Activo</th>
+                <th>Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $( function() {
+    $('#projects-datatable').dataTable({
+      "processing": false,
+      "serverSide": false,
+      "ajax": {
+        "url": $('#projects-datatable').data('source')
+      },
+      "pagingType": "full_numbers",
+      "columns": [
+        {"data": "id"},
+        {"data": "name"},
+        {"data": "description"},
+        {"data": "currentStatus"},
+        {"data": "finishDate"},
+        {"data": "active"},
+        {"data": "options"},
+      ]
+    });
+  });
+</script>

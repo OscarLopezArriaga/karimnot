@@ -21,11 +21,20 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-
+# Gem Devise for authentication
 gem 'devise'
-
+# Gem pg for connection postgresql
 gem 'pg'
-# Use Redis adapter to run Action Cable in production
+# Gem JQuery
+gem 'jquery-rails'
+# Gem DataTables JQuery
+gem 'jquery-datatables'
+# Gem ajax-datatables-rails
+gem 'ajax-datatables-rails'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-datetimepicker'
+end# Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

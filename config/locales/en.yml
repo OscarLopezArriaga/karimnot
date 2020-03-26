@@ -31,3 +31,15 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      category:
+        name: "Nombre"
+        description: "Descripción"
+      project:
+        name: "Nombre"
+        description: "Descripción"
+        currentStatus: "Status actual"
+        finishDate: "Fecha de Finalización"
+        active: "Activo"
+        categories: "Categoría"
