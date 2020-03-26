@@ -17,7 +17,8 @@ class ProjectDatatable < AjaxDatatablesRails::ActiveRecord
        description: { source: "Project.description", cond: :like },
        currentStatus: { source: "Project.currentStatus", cond: :like },
        finishDate: { source: "Project.finishDate", cond: :like },
-       active: { source: "Project.active", cond: :like }
+       active: { source: "Project.active", cond: :like },
+       category: { source: "Project.category.name", cond: :like }
     }
   end
 
@@ -30,7 +31,8 @@ class ProjectDatatable < AjaxDatatablesRails::ActiveRecord
         description: project.description,
         currentStatus: project.currentStatus,
         finishDate: project.finishDate,
-        active: project.active,
+        active: project.active === true ? 'Si' : 'No',
+        category: project.category.name,
         options: actions(project)
       }
     end

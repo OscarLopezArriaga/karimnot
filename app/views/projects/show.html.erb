@@ -55,7 +55,7 @@
           <strong>Status Activo</strong>
         </div>
         <div class="col-lg-8">
-
+          <% if @project.active === true %>Sí<% else %>No<% end %>
         </div>
       </div>
       <div class="row">
@@ -63,7 +63,7 @@
           <strong>Categoría</strong>
         </div>
         <div class="col-lg-8">
-
+          <%= @project.category.name %>
         </div>
       </div>
     </div>
