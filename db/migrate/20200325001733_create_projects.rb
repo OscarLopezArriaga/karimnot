@@ -5,7 +5,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.string :description
       t.string :currentStatus,   null: false
       t.date :finishDate,        null: false
-      t.boolean :active,         null: false, default: true
+      t.boolean :active,         null: false, default: false
       t.references :category,  foreign_key: true
       t.timestamps
     end

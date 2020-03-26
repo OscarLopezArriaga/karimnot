@@ -52,8 +52,11 @@
     <div class="row">
       <br>
       <div class="col-lg-10">
-        <input type="checkbox" name="active" checked data-toggle="toggle" data-on="Sí" data-off="No" data-onstyle="success" data-offstyle="danger">
-        <%= form.label '¿Está activo?*', class: 'custom-control-label', for: 'customSwitch1' %>
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="customSwitches">
+          <%= form.hidden_field :active, class: 'form-control', id: 'active', value: false %>
+          <label class="custom-control-label" for="customSwitches">¿Está Activo?</label>
+        </div>
       </div>
     </div>
 
@@ -91,4 +94,7 @@
      timepicker:false,
      format:'Y-m-d'
     });
+    $('#customSwitches').click(function () {
+      $('#active').val(this.checked);
+    })
 </script>
