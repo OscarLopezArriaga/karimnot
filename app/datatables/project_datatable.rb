@@ -40,9 +40,9 @@ class ProjectDatatable < AjaxDatatablesRails::ActiveRecord
 
   def actions(object)
     links = []
-    links << link_to('Ver', object, class: 'btn btn-success') + ' '
-    links << link_to('Editar', edit_project_path(object), class: 'btn btn-warning') + ' '
-    links << link_to('Eliminar', object, method: :delete, data: { confirm: '¿Esta seguro que desea eliminar?' }, class: 'btn btn-danger')
+    links << link_to('<i class="material-icons">remove_red_eye</i>'.html_safe, object) + ' '
+    links << link_to('<i class="material-icons">create</i>'.html_safe, edit_project_path(object)) + ' '
+    links << link_to('<i class="material-icons">delete_outline</i>'.html_safe, object, method: :delete, data: { confirm: '¿Esta seguro que desea eliminar?' })
     safe_join(links, '')
   end
 
