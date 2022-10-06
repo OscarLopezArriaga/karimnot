@@ -1,6 +1,17 @@
 GEM
-  remote: https://rubygems.org/
   remote: https://rails-assets.org/
+  specs:
+    rails-assets-datetimepicker (2.5.20)
+      rails-assets-jquery (>= 1.7.2)
+      rails-assets-jquery-mousewheel (>= 3.1.13)
+      rails-assets-php-date-formatter (>= 1.3.3)
+    rails-assets-jquery (3.4.1)
+    rails-assets-jquery-mousewheel (3.1.13)
+      rails-assets-jquery (>= 1.2.2)
+    rails-assets-php-date-formatter (1.3.5)
+
+GEM
+  remote: https://rubygems.org/
   specs:
     actioncable (5.2.4.2)
       actionpack (= 5.2.4.2)
@@ -43,8 +54,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    addressable (2.7.0)
-      public_suffix (>= 2.0.2, < 5.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     ajax-datatables-rails (1.1.0)
       railties (>= 4.2)
     archive-zip (0.12.0)
@@ -86,6 +97,7 @@ GEM
     duktape (2.3.0.0)
     erubi (1.9.0)
     execjs (2.7.0)
+    ffi (1.12.2)
     ffi (1.12.2-x64-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -111,13 +123,17 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
+    msgpack (1.3.3)
     msgpack (1.3.3-x64-mingw32)
     nio4r (2.5.2)
+    nokogiri (1.10.9)
+      mini_portile2 (~> 2.4.0)
     nokogiri (1.10.9-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    pg (1.2.3)
     pg (1.2.3-x64-mingw32)
-    public_suffix (4.0.3)
+    public_suffix (4.0.7)
     puma (3.12.4)
     rack (2.2.2)
     rack-test (1.1.0)
@@ -135,14 +151,6 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.2.4.2)
       sprockets-rails (>= 2.0.0)
-    rails-assets-datetimepicker (2.5.20)
-      rails-assets-jquery (>= 1.7.2)
-      rails-assets-jquery-mousewheel (>= 3.1.13)
-      rails-assets-php-date-formatter (>= 1.3.3)
-    rails-assets-jquery (3.4.1)
-    rails-assets-jquery-mousewheel (3.1.13)
-      rails-assets-jquery (>= 1.2.2)
-    rails-assets-php-date-formatter (1.3.5)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -211,6 +219,7 @@ GEM
 
 PLATFORMS
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   ajax-datatables-rails
